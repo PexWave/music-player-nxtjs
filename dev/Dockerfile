@@ -1,12 +1,16 @@
-FROM node:21.2.0-bullseye-slim
+FROM node:18-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
 RUN npm install
 
 COPY . .
+
+RUN npm run build
+
+COPY .next ./next
 
 EXPOSE 3000
 
