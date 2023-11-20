@@ -5,7 +5,7 @@ services:
     build:
       context: . #if your Dockerfile is not at the same level change the path here (./frontend)
     restart: always
-    command: npm run dev
+    command: npx run dev
     environment:
       - NODE_ENV=development
     volumes:
