@@ -1,21 +1,12 @@
 version: '3.3'
-services: 
+services:
   dev:
-    container_name: dev
-    build:
-      context: . #if your Dockerfile is not at the same level change the path here (./frontend)
-      target: dev
-    restart: always
-    command: yarn dev
-    environment:
-      - NODE_ENV=development
-    volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/.next
-      - ./music:/mnt/app/music
+    build: .
+    container_name: dev_c
     ports:
-      - 3000:3000
+      - '3333:3000'
+    volumes:
+      - ./music:/mnt/app/music
     depends_on:
       - postgres
 
