@@ -3,7 +3,7 @@ import styles from '../css/userpreferences.module.css'
 import Artistcard from '../components/artistcard'
 import Dynamicbutton from '../components/dynamicbutton'
 
-export default function page() {
+export default function Page() {
   return (
     <div className=''>
       <h3 className="mb-2 ml-5 block text-4xl leading-snug tracking-normal text-quaternary antialiased">Choose your artist</h3>

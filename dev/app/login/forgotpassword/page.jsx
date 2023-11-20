@@ -3,7 +3,7 @@ import React from 'react'
 //components
 import Submitbutton from '../../components/submitbutton'
 
-export default function page({children}) {
+export default function Page({children}) {
   return (
     <div className="container mx-auto">
     <div className = "flex flex-col items-center justify-center">

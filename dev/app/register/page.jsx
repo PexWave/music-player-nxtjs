@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link';
 
 import Submitbutton from '../components/submitbutton'
-export default function page({children}) {
+export default function Page({children}) {
 
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
