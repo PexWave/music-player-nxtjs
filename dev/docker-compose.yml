@@ -4,7 +4,6 @@ services:
     container_name: dev
     build:
       context: . #if your Dockerfile is not at the same level change the path here (./frontend)
-      target: dev
     restart: always
     command: yarn dev
     environment:
