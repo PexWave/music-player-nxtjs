@@ -10,8 +10,6 @@ services:
       - NODE_ENV=development
     volumes:
       - .:/app
-      - /app/node_modules
-      - /app/.next
       - ./music:/mnt/app/music
     ports:
       - 3000:3000

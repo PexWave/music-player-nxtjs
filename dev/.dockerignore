@@ -1,2 +1,4 @@
+node_modules
 Dockerfile*
+.next
 next-env.d.ts
