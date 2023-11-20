@@ -6,7 +6,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./music:/usr/src/music
+      - ./music:/mnt/app/music
     depends_on:
       - postgres
 
