@@ -1,0 +1,21 @@
+@media (max-width: 640px) {
+  .container { 
+    width: 100vw;
+   }
+}
+
+
+
+.container {
+
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    height: 250px;
+    width: 100vw;
+    background: white;
+}
+

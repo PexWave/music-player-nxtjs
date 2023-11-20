@@ -1,0 +1,13 @@
+@media (min-width: 1024px) {
+  .container {
+    /* width: 300PX; */
+    background-color: #fff;
+    height: 100vh;
+  }
+}
+
+.container {
+  /* width: 100vw; */
+  background-color: #fff2;
+  height: 100vh;
+}

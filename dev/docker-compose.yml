@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  dev:
+    build: .
+    container_name: dev_c
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./music:/usr/src/music
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres_c
+    environment:
+      POSTGRES_DB: musicplayer
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - '5432:5432'
+    volumes: 
+       - ./pgdata:/var/lib/postgresql/data
