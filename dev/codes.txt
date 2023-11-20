@@ -1,3 +1,5 @@
+COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build
+
 version: '3.3'
 services:
   dev:

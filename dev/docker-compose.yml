@@ -1,15 +1,17 @@
-version: '3.5'
-services: 
-  dev:
-    container_name: dev
+version: '3.8'
+services:
+  web:
     build:
-      context: . #if your Dockerfile is not at the same level change the path here (./frontend)
+      context: ./
+      target: runner
     volumes:
       - .:/app
-      - /app/node_modules
-      - ./music:/mnt/app/music
+    command: npm run dev
     ports:
-      - 3000:3000
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+
     depends_on:
       - postgres
 
