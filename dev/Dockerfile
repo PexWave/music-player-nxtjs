@@ -8,6 +8,9 @@ RUN  npm install --production
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
+
+COPY prisma ./prisma/
+
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
