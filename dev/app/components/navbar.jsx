@@ -1,13 +1,18 @@
 import React from 'react'
 import utilStyles from '../css/utils.module.css';
 import Link from 'next/link';
-
+import { auth } from "../../auth"
+import { options } from '../api/auth/[...nextauth]/options';
+import { signIn, useSession, signOut } from "next-auth/react"
 
 const name = 'Music Player';
 export const siteTitle = 'Music Player';
 
+//components
+import Loginlogout from './loginlogout';
 
-export default function Navbar() {
+export default async function Navbar() {
+  const session = await auth();
   return (
     <nav className='w-full flex flex-row'>
     <Link href="/" className='hover:no-underline w-full'>
@@ -15,9 +20,8 @@ export default function Navbar() {
     </Link>
 
     <div className='relative flex-grow w-full'>
-    <Link href="/" className='absolute top-0 right-0 p-5 hover:no-underline'>
-    <h1 className='text-white font-bold'>Logout</h1>
-    </Link>
+
+      <Loginlogout session={session} />
     </div>
 
 

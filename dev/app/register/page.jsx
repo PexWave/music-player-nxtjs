@@ -6,33 +6,48 @@ import Link from 'next/link';
 import Submitbutton from '../components/submitbutton'
 export default function Page({children}) {
 
+  // const [registerData, setRegisterData] = useState({
+  //   name: "",
+  //   email: "",
+  //   strpassword: "",
+  // });
+
   const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [strpassword, setstrpassword] = React.useState('');
   const [error, setError] = React.useState('');
   const [message, setMsg] = React.useState('');
 
   const handleRegistration = async (e) => {
     e.preventDefault();
 
-    if (!username || !password) {
+    if (!username || !strpassword) {
       setError('all fields are required');
       return;
     }
 
     try {
+      
+
       const res = await fetch('api/register',{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({username, password})
+        body: JSON.stringify({username, strpassword})
       });
 
+      // console.log(res);
       if(res.ok) {
         const form = e.target.reset();
         setMsg('Registration successful');
+      } else {
+        var data = await res.json();
+
+        setError(data.message);
+
       }
     } catch (error) {
+  
       console.log("error during registration");
     }
   }
@@ -47,7 +62,7 @@ export default function Page({children}) {
           <input onChange={(e) => setUsername(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" placeholder="Username or email" />
 
           
-          <input onChange={(e) => setPassword(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="password" placeholder="Password" />
+          <input onChange={(e) => setstrpassword(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="password" placeholder="Password" />
           
           { error && (
           <div className='bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2'>
@@ -61,7 +76,7 @@ export default function Page({children}) {
 
 
           <div className="flex items-center justify-center">
-          <Submitbutton buttonname={"Register"} />
+          <Submitbutton buttonname={"Register"} buttontype={"submit"} />
           </div>
 
           <div className="flex items-center justify-center">

@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body className='relative overflow-hidden'>
+        <body className='relative overflow-hidden bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-green-200 via-green-400 to-purple-700'>
              <Navbar />
               <main className="flex flex-col items-center justify-center p-24">
                   {children}
