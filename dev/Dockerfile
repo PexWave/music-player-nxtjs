@@ -15,6 +15,8 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
+RUN i -g prisma
+
 RUN prisma generate
 
 RUN npm run build
