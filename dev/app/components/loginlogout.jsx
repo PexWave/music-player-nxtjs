@@ -9,7 +9,7 @@ export default function Loginlogout({session}) {
   return (
     <div>
     {session ? (
-          <button onClick={() => signOut({ callbackUrl: 'https://google.com/' })} className='absolute top-0 right-0 p-5 hover:no-underline'>
+          <button onClick={() => signOut({ callbackUrl: `${window.location.origin}/`})} className='absolute top-0 right-0 p-5 hover:no-underline'>
           <h1 className='text-white font-bold'>Logout</h1>
           </button>
     ) :
