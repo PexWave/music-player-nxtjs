@@ -17,5 +17,5 @@ model User {
   email     String?   @unique @db.VarChar(255)
 
   @@index([username])
-  @@map("users")
+
 }
