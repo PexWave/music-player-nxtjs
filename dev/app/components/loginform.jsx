@@ -22,7 +22,7 @@ export default function Loginform({children}) {
         password: password,
         // The page where you want to redirect to after a 
         // successful login
-        callbackUrl: `https://localhost:3000/` 
+        callbackUrl: `http://localhost:3000/` 
       }
     )
   }

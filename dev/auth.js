@@ -174,7 +174,7 @@ export const config = {
     },
 
     redirect({ url, baseUrl }) {
-      return baseUrl
+      return url
     },
 
     jwt({ token, account, user }) {
