@@ -173,6 +173,10 @@ export const config = {
       return session;
     },
 
+    redirect({ url, baseUrl }) {
+      return baseUrl
+    },
+
     jwt({ token, account, user }) {
       if (account) {
         token.accessToken = account.access_token;
